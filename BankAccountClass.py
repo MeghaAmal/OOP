@@ -7,6 +7,10 @@ class BankAccount:
 # the account's balance. It is assigned to
 # the __balance attribute.
 
+
+
+
+# ("__") means hiding attributes from other people 
     def __init__(self, bal):
         self.__balance = bal
 
@@ -20,8 +24,8 @@ class BankAccount:
       # from the account.
 
     def withdraw(self, amount):
-        if self.__balance >= amount:
-            self.__balance -= amount
+        if self.__balance >= abs(amount) :
+            self.__balance -= abs(amount)
         else:
             print('Error: Insufficient funds')
 
@@ -35,3 +39,13 @@ class BankAccount:
 
     def __str__(self):
         return 'The balance is $' + format(self.__balance, ',.2f')
+
+
+
+
+# mee=BankAccount(200)
+
+# mee.withdraw(-200)
+# print(mee)
+
+
